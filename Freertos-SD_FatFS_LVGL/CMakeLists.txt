@@ -78,8 +78,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 
         # LVGL sources
         # examples/porting
-        LVGL/GUI/lvgl/examples/porting/lv_port_disp_template.c
-        LVGL/GUI/lvgl/examples/porting/lv_port_indev_template.c
+        LVGL/GUI/lvgl/examples/porting/lv_port_disp.c
+        LVGL/GUI/lvgl/examples/porting/lv_port_indev.c
 
         # src/core
 		LVGL/GUI/lvgl/src/core/lv_disp.c
@@ -343,6 +343,21 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 		LVGL/GUI_APP/demos/music/assets/img_lv_demo_music_wave_top_large.c
 
 
+
+		LVGL/GUI_APP/demos/keypad_encoder/lv_demo_keypad_encoder.c
+
+		LVGL/GUI_APP/demos/benchmark/lv_demo_benchmark.c
+		LVGL/GUI_APP/demos/benchmark/assets/img_benchmark_cogwheel_alpha16.c
+		LVGL/GUI_APP/demos/benchmark/assets/img_benchmark_cogwheel_argb.c
+		LVGL/GUI_APP/demos/benchmark/assets/img_benchmark_cogwheel_chroma_keyed.c
+		LVGL/GUI_APP/demos/benchmark/assets/img_benchmark_cogwheel_indexed16.c
+		LVGL/GUI_APP/demos/benchmark/assets/img_benchmark_cogwheel_rgb.c
+		LVGL/GUI_APP/demos/benchmark/assets/lv_font_bechmark_montserrat_12_compr_az.c.c
+		LVGL/GUI_APP/demos/benchmark/assets/lv_font_bechmark_montserrat_16_compr_az.c.c
+		LVGL/GUI_APP/demos/benchmark/assets/lv_font_bechmark_montserrat_28_compr_az.c.c
+
+
+
 )
 
 # Add include paths
@@ -377,6 +392,8 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 		LVGL/GUI_APP/demos/widgets/assets
 		LVGL/GUI_APP/demos/music
 		LVGL/GUI_APP/demos/music/assets
+		LVGL/GUI_APP/demos/keypad_encoder
+		LVGL/GUI_APP/demos/benchmark
 
 
         Lib/key

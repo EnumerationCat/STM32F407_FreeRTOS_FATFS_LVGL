@@ -10,7 +10,7 @@
 /*********************
  *      INCLUDES
  *********************/
-#include "lv_port_disp_template.h"
+#include "lv_port_disp.h"
 #include "../../lvgl.h"
 
 
@@ -121,20 +121,21 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 {
     /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/
 
-    uint16_t x, y;
-    uint16_t width = area->x2 - area->x1 + 1;
-    uint16_t height = area->y2 - area->y1 + 1;
+    // uint16_t x, y;
+    // uint16_t width = area->x2 - area->x1 + 1;
+    // uint16_t height = area->y2 - area->y1 + 1;
 
-    /* Set the drawing window */
-    LCD_Set_Address_Window(area->x1, area->y1, width, height);
+    // /* Set the drawing window */
+    // LCD_Set_Address_Window(area->x1, area->y1, width, height);
 
-    /* Write pixel data */
-    for(y = 0; y < height; y++) {
-        for(x = 0; x < width; x++) {
-            LCD_WR_DATA(color_p->full);
-            color_p++;
-        }
-    }
+    // /* Write pixel data */
+    // for(y = 0; y < height; y++) {
+    //     for(x = 0; x < width; x++) {
+    //         LCD_WR_DATA(color_p->full);
+    //         color_p++;
+    //     }
+    // }
+	LCD_Fill(area->x1, area->y1, area->x2, area->y2, (uint16_t*)color_p);
 
     /*IMPORTANT!!!
      *Inform the graphics library that you are ready with the flushing*/

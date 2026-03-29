@@ -6,6 +6,8 @@
 #include "diskio.h"
 #include "ff.h"
 #include "key.h"
+#include "lv_demo_benchmark.h"
+#include "lv_demo_keypad_encoder.h"
 #include "lv_demo_music.h"
 #include "lv_demo_stress.h"
 #include "lv_demo_widgets.h"
@@ -303,9 +305,11 @@ void task1(void *pvParameters) {
 
 	lv_init();
 	lv_port_disp_init();
-	//lv_demo_stress();
+	lv_demo_stress();
 	//lv_demo_widgets();
-	lv_demo_music();
+	//lv_demo_music();
+	//lv_demo_keypad_encoder();
+	//lv_demo_benchmark();
     
 	// lv_obj_t* switch_obj = lv_switch_create(lv_scr_act());
 	// lv_obj_set_size(switch_obj, 120, 60);
@@ -315,15 +319,7 @@ void task1(void *pvParameters) {
     while (1) {
 		
         usbprintf("任务1：执行...\r\n");
-        if (Key_Check(0, KEY_SINGLE)) {
-
-	
-            usbprintf("按键按下，开始操作\r\n");
-
-			
-
-            
-        }
+        
 		lv_timer_handler(); // 处理LVGL定时器事件
 
         // 打印栈和堆信息
@@ -345,7 +341,7 @@ void task2(void * pvParameters)
 
 	
 	//LCD_Fill_Rect(100,200,10,10,RED);
-	uint8_t color_state = 0;
+	//uint8_t color_state = 0;
     while (1) {
         // usbprintf("任务2:LVGL\r\n");
 		//  // // 根据状态切换背景色

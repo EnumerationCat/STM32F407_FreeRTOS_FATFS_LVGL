@@ -25,12 +25,12 @@ extern "C" {
 #include "diskio.h"
 
 #include "lvgl.h"
-#include "lv_port_disp_template.h"
+#include "lv_port_disp.h"
 #include "lv_demo_widgets.h"
 #include "lv_demo_stress.h"
 #include "lv_demo_music.h"
-
-
+#include "lv_demo_keypad_encoder.h"
+#include "lv_demo_benchmark.h"
 
 
 void PRE_SLEEP_PROCESSING(void);

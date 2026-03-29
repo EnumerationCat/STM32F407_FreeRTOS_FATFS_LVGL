@@ -6,7 +6,7 @@
 #include "stm32f407xx.h"
 #include <stdint.h>
 #include <sys/types.h>
-#include "lvgl.h"
+
 
 
 
@@ -31,7 +31,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   if(htim->Instance == TIM6)
   {
     HAL_IncTick();
-	lv_tick_inc(1);
   }
   if(htim->Instance == TIM2)
   {
