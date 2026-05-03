@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "dplinkDebug",
+            "servertype": "openocd",
+            "executable": "./build/DEMO.elf",
+            "runToEntryPoint": "main",
+            "svdFile": "./GD32H7xx.svd",
+            "configFiles": [
+                "interface/cmsis-dap.cfg",
+                "target/gd32h7x.cfg"
+            ],
+            "toolchainPrefix": "arm-none-eabi",
+            
+        }
+    ]
+}
